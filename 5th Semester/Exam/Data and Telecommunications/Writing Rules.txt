@@ -1,0 +1,8 @@
+1. Experiment name
+2. Objectives
+3. Theory
+4. Block diagram
+5. Diagram(sir করাইছিল ল্যাব করানোর সময় new add)
+6. Apparatus
+7. Working diagram (2 and 5) report এর জন্য। বাকি গুলাতে লাগবে না
+8. Result(হাতে আকা)
