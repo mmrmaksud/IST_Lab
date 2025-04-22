@@ -1,0 +1,102 @@
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    04/22/2025  12:15:34  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.4.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\1stlab.obj TO .\Objects\1stlab PRINT (.\Listings\1stlab.m51)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\1stlab.obj (1STLAB)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  .\Objects\1stlab (1STLAB)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     001DH     UNIT         ?PR?DELAY?1STLAB
+            CODE    081DH     000CH     UNIT         ?PR?MAIN?1STLAB
+            CODE    0829H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\1stlab (1STLAB)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?1STLAB
+
+?PR?MAIN?1STLAB
+  +--> ?PR?DELAY?1STLAB
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\1stlab (1STLAB)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        1STLAB
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  C:081DH         PUBLIC        main
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  04/22/2025  12:15:34  PAGE 2
+
+
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  B:00A0H.1       PUBLIC        LED
+  D:00C8H         PUBLIC        T2CON
+  C:0800H         PUBLIC        Delay
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          MAIN
+  C:081DH         LINE#         4
+  C:081DH         LINE#         5
+  C:081DH         LINE#         6
+  C:081DH         LINE#         7
+  C:081DH         LINE#         8
+  C:081FH         LINE#         9
+  C:0822H         LINE#         10
+  C:0824H         LINE#         11
+  C:0827H         LINE#         12
+  -------         ENDPROC       MAIN
+  -------         PROC          DELAY
+  -------         DO            
+  D:0006H         SYMBOL        i
+  D:0004H         SYMBOL        j
+  -------         ENDDO         
+  C:0800H         LINE#         14
+  C:0800H         LINE#         15
+  C:0800H         LINE#         17
+  C:0803H         LINE#         18
+  C:0803H         LINE#         19
+  C:0811H         LINE#         20
+  C:081CH         LINE#         21
+  -------         ENDPROC       DELAY
+  -------         ENDMOD        1STLAB
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0029H BYTE ( 2%) *
+******************************************************************************
+
+Program Size: data=9.0 xdata=0 code=56
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
