@@ -1,0 +1,41 @@
+IPV4 Subnetting Concept
+Rules:
+1. Identify network & host requirements
+2. Satisfy Network & host requirements
+3. Find out Block size
+4. Find out network address
+5. Find out brodcast address
+6. Find out valid host ip address range
+7. Find out custom subnet mask & CIDR
+
+Requirements:
+IT LAN (60)
+MIS LAN (60)
+Sales LAN (60)
+
+Class C:
+192.168.100.0/24 - N N N H(Network*3 Host)
+FLSM - Fixed length subnet mask
+VLSM - Variable length subnet mask
+
+1 1 in 128 and 64 | 0 in 32 16 8 4 2 1
+128 and 64 is N and others is H
+Network: 2^2 =4
+Host: 2^6-2 = 62
+Block size: 2^6 = 64
+
+IP Address Allocation Table:
+
+Subnet No.	Network Address(N.A)	Broadcast Address(B.A)	Valid Host IP Address Address Range
+1st		192.168.100.0		192.168.100.63		192.168.100.1 - 192.168.100.62
+2nd		192.168.100.64		192.168.100.127		192.168.100.65 - 192.168.100.126
+3rd		192.168.100.128		192.168.100.191		192.168.100.129 - 192.168.100.190
+4th		192.168.100.192		192.168.100.255		192.168.100.193 - 192.168.100.254
+
+Custom Subnet Mask: 255.255.255.192 (128+64)
+CIDR: /26
+
+Task: 
+Network: 5
+Host: 30
+Address: 192.168.17.0/24
