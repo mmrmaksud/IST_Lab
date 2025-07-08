@@ -1,0 +1,166 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    06/22/2025  18:01:12  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\Traffic.obj TO .\Objects\Traffic PRINT (.\Listings\Traffic.m51)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\Traffic.obj (TRAFFIC)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  .\Objects\Traffic (TRAFFIC)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     0068H     UNIT         ?PR?MAIN?TRAFFIC
+            CODE    0868H     0026H     UNIT         ?PR?_DELAY?TRAFFIC
+            CODE    088EH     0018H     UNIT         ?PR?ALLOFF?TRAFFIC
+            CODE    08A6H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\Traffic (TRAFFIC)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?TRAFFIC
+
+?PR?MAIN?TRAFFIC
+  +--> ?PR?ALLOFF?TRAFFIC
+  +--> ?PR?_DELAY?TRAFFIC
+
+?PR?ALLOFF?TRAFFIC
+  +--> ?PR?_DELAY?TRAFFIC
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\Traffic (TRAFFIC)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        TRAFFIC
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00A0H         PUBLIC        P2
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  06/22/2025  18:01:12  PAGE 2
+
+
+  D:00B0H         PUBLIC        P3
+  C:0800H         PUBLIC        main
+  B:00A0H.2       PUBLIC        green1
+  B:00A0H.5       PUBLIC        green2
+  B:00B0H.2       PUBLIC        green3
+  B:00A0H.1       PUBLIC        yellow1
+  B:00A0H.4       PUBLIC        yellow2
+  B:00B0H.1       PUBLIC        yellow3
+  C:0893H         PUBLIC        allOff
+  B:00A0H.0       PUBLIC        red1
+  B:00A0H.3       PUBLIC        red2
+  B:00B0H.0       PUBLIC        red3
+  C:0868H         PUBLIC        _Delay
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        time
+  -------         DO            
+  D:0004H         SYMBOL        i
+  D:0002H         SYMBOL        j
+  -------         ENDDO         
+  C:0868H         LINE#         91
+  C:0868H         LINE#         92
+  C:0868H         LINE#         94
+  C:0878H         LINE#         95
+  C:0878H         LINE#         96
+  C:087BH         LINE#         97
+  C:087BH         LINE#         98
+  C:0886H         LINE#         99
+  C:088DH         LINE#         100
+  -------         ENDPROC       _DELAY
+  -------         PROC          L?0014
+  -------         ENDPROC       L?0014
+  -------         PROC          ALLOFF
+  C:0893H         LINE#         103
+  C:0893H         LINE#         104
+  C:0893H         LINE#         105
+  C:0899H         LINE#         106
+  C:089FH         LINE#         107
+  C:08A5H         LINE#         108
+  -------         ENDPROC       ALLOFF
+  -------         PROC          MAIN
+  C:0800H         LINE#         110
+  C:0800H         LINE#         111
+  C:0800H         LINE#         112
+  C:0800H         LINE#         113
+  C:0800H         LINE#         115
+  C:0803H         LINE#         116
+  C:0805H         LINE#         117
+  C:0807H         LINE#         118
+  C:0809H         LINE#         119
+  C:0810H         LINE#         121
+  C:0813H         LINE#         122
+  C:0815H         LINE#         123
+  C:0817H         LINE#         124
+  C:0817H         LINE#         125
+  C:0817H         LINE#         127
+  C:081AH         LINE#         128
+  C:081CH         LINE#         129
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  06/22/2025  18:01:12  PAGE 3
+
+
+  C:081EH         LINE#         130
+  C:0820H         LINE#         131
+  C:0823H         LINE#         134
+  C:0826H         LINE#         135
+  C:0828H         LINE#         136
+  C:082AH         LINE#         137
+  C:082CH         LINE#         138
+  C:082FH         LINE#         140
+  C:0832H         LINE#         141
+  C:0834H         LINE#         142
+  C:0836H         LINE#         143
+  C:0836H         LINE#         144
+  C:0836H         LINE#         146
+  C:0839H         LINE#         147
+  C:083BH         LINE#         148
+  C:083DH         LINE#         149
+  C:083FH         LINE#         150
+  C:0842H         LINE#         153
+  C:0845H         LINE#         154
+  C:0847H         LINE#         155
+  C:0849H         LINE#         156
+  C:084BH         LINE#         157
+  C:084EH         LINE#         159
+  C:0851H         LINE#         160
+  C:0853H         LINE#         161
+  C:0855H         LINE#         162
+  C:0857H         LINE#         163
+  C:085AH         LINE#         165
+  C:085DH         LINE#         166
+  C:085FH         LINE#         167
+  C:0861H         LINE#         168
+  C:0863H         LINE#         169
+  C:0866H         LINE#         170
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        TRAFFIC
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 00A6H BYTE ( 8%) *
+******************************************************************************
+
+Program Size: data=9.0 xdata=0 code=181
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
