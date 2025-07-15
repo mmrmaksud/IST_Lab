@@ -1,0 +1,164 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    07/06/2024  01:14:22  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\traffic light.obj TO .\Objects\traffic light PRINT (.\Listings\traffic light.m51)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\traffic light.obj (TRAFFIC_LIGHT)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?ULCMP)
+
+
+LINK MAP OF MODULE:  .\Objects\traffic light (TRAFFIC_LIGHT)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0008H     UNIT         _DATA_GROUP_
+            IDATA   0010H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     0074H     UNIT         ?PR?_DELAY?TRAFFIC_LIGHT
+            CODE    0874H     0059H     UNIT         ?PR?TRAFFICLIGHT?TRAFFIC_LIGHT
+            CODE    08CDH     0011H     UNIT         ?C?LIB_CODE
+            CODE    08DEH     000CH     UNIT         ?PR?MAIN?TRAFFIC_LIGHT
+            CODE    08EAH     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\traffic light (TRAFFIC_LIGHT)
+
+
+SEGMENT                                  DATA_GROUP 
+  +--> CALLED SEGMENT                  START    LENGTH
+------------------------------------------------------
+?C_C51STARTUP                          -----    -----
+  +--> ?PR?MAIN?TRAFFIC_LIGHT
+
+?PR?MAIN?TRAFFIC_LIGHT                 -----    -----
+  +--> ?PR?TRAFFICLIGHT?TRAFFIC_LIGHT
+
+?PR?TRAFFICLIGHT?TRAFFIC_LIGHT         -----    -----
+  +--> ?PR?_DELAY?TRAFFIC_LIGHT
+
+?PR?_DELAY?TRAFFIC_LIGHT               0008H    0008H
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\traffic light (TRAFFIC_LIGHT)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/06/2024  01:14:22  PAGE 2
+
+
+
+  -------         MODULE        TRAFFIC_LIGHT
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0874H         PUBLIC        trafficlight
+  D:0090H         PUBLIC        P1
+  B:00A0H.1       PUBLIC        tl1o
+  D:00A0H         PUBLIC        P2
+  B:00A0H.4       PUBLIC        tl2o
+  D:00B0H         PUBLIC        P3
+  B:00B0H.1       PUBLIC        tl3o
+  B:00A0H.0       PUBLIC        tl1r
+  B:00A0H.3       PUBLIC        tl2r
+  B:00B0H.0       PUBLIC        tl3r
+  C:0808H         PUBLIC        _delay
+  C:08DEH         PUBLIC        main
+  B:00A0H.2       PUBLIC        tl1g
+  B:00A0H.5       PUBLIC        tl2g
+  B:00B0H.2       PUBLIC        tl3g
+  -------         PROC          MAIN
+  C:08DEH         LINE#         23
+  C:08DEH         LINE#         24
+  C:08DEH         LINE#         25
+  C:08E1H         LINE#         26
+  C:08E3H         LINE#         27
+  C:08E5H         LINE#         29
+  C:08E5H         LINE#         30
+  C:08E5H         LINE#         31
+  C:08E8H         LINE#         32
+  -------         ENDPROC       MAIN
+  -------         PROC          L?0011
+  -------         ENDPROC       L?0011
+  -------         PROC          _DELAY
+  D:0008H         SYMBOL        t
+  -------         DO            
+  D:000CH         SYMBOL        i
+  -------         ENDDO         
+  C:0808H         LINE#         37
+  C:0810H         LINE#         38
+  C:0810H         LINE#         39
+  C:0823H         LINE#         40
+  C:0823H         LINE#         42
+  C:0859H         LINE#         43
+  C:0871H         LINE#         44
+  C:0873H         LINE#         46
+  -------         ENDPROC       _DELAY
+  -------         PROC          TRAFFICLIGHT
+  C:0874H         LINE#         49
+  C:0874H         LINE#         51
+  C:0874H         LINE#         53
+  C:0877H         LINE#         54
+  C:087AH         LINE#         57
+  C:087CH         LINE#         58
+  C:087EH         LINE#         59
+  C:0880H         LINE#         61
+  C:0882H         LINE#         62
+  C:0884H         LINE#         63
+  C:0886H         LINE#         65
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/06/2024  01:14:22  PAGE 3
+
+
+  C:0888H         LINE#         66
+  C:088AH         LINE#         67
+  C:088CH         LINE#         70
+  C:088FH         LINE#         72
+  C:0892H         LINE#         73
+  C:0895H         LINE#         76
+  C:0897H         LINE#         77
+  C:0899H         LINE#         78
+  C:089BH         LINE#         80
+  C:089DH         LINE#         81
+  C:089FH         LINE#         82
+  C:08A1H         LINE#         84
+  C:08A3H         LINE#         85
+  C:08A5H         LINE#         86
+  C:08A7H         LINE#         89
+  C:08AAH         LINE#         91
+  C:08ADH         LINE#         92
+  C:08B0H         LINE#         95
+  C:08B2H         LINE#         96
+  C:08B4H         LINE#         97
+  C:08B6H         LINE#         99
+  C:08B8H         LINE#         100
+  C:08BAH         LINE#         101
+  C:08BCH         LINE#         103
+  C:08BEH         LINE#         104
+  C:08C0H         LINE#         105
+  C:08C2H         LINE#         108
+  -------         ENDPROC       TRAFFICLIGHT
+  -------         ENDMOD        TRAFFIC_LIGHT
+
+  -------         MODULE        ?C?ULCMP
+  C:08CDH         PUBLIC        ?C?ULCMP
+  -------         ENDMOD        ?C?ULCMP
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 00D9H BYTE (10%) *
+******************************************************************************
+
+Program Size: data=17.0 xdata=0 code=249
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

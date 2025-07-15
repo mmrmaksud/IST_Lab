@@ -1,0 +1,3 @@
+".\Objects\reprogram.obj" 
+TO ".\Objects\reprogram" 
+PRINT(".\Listings\reprogram.m51")

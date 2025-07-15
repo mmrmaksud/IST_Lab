@@ -1,0 +1,139 @@
+C51 COMPILER V9.60.0.0   TRAFFIC_LIGHT                                                     07/06/2024 01:14:21 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE TRAFFIC_LIGHT
+OBJECT MODULE PLACED IN .\Objects\traffic light.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE traffic light.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\List
+                    -ings\traffic light.lst) TABS(2) OBJECT(.\Objects\traffic light.obj)
+
+line level    source
+
+   1          #include<reg51.h>
+   2          
+   3          //signal 1
+   4          sbit tl1r = P2^0;      // red
+   5          sbit tl1o = P2^1;      // orange
+   6          sbit tl1g = P2^2;      // green
+   7          
+   8          //signal 2
+   9          sbit tl2r = P2^3;    // red
+  10          sbit tl2o = P2^4;     // orange
+  11          sbit tl2g = P2^5;    // green
+  12          
+  13          //signal 3
+  14          sbit tl3r = P3^0;    // red
+  15          sbit tl3o = P3^1;    // orange
+  16          sbit tl3g = P3^2;    // green
+  17          
+  18          
+  19          void delay(int t);          
+  20          void trafficlight(void);
+  21          
+  22          
+  23          void main()                  // main program
+  24          {
+  25   1        P1=0x00;                     
+  26   1        P2=0x00;
+  27   1        P3=0x00;
+  28   1        
+  29   1        while(1)
+  30   1        {
+  31   2        trafficlight(); 
+  32   2        }
+  33   1      
+  34   1      }
+  35          
+  36          
+  37          void delay(unsigned long int t)              // delay routine
+  38          {
+*** WARNING C235 IN LINE 38 OF traffic light.c: parameter 1: different types
+  39   1        while(t>0)
+  40   1        {
+  41   2        unsigned long int i;
+  42   2        for(i=1;i<10*1275;i++);
+  43   2          t--;
+  44   2        }
+  45   1      
+  46   1      }
+  47          
+  48          
+  49          void trafficlight(void)         // traffic light system program
+  50          
+  51          {
+  52   1        
+  53   1      P2= 0x11;  // traffic signal control
+C51 COMPILER V9.60.0.0   TRAFFIC_LIGHT                                                     07/06/2024 01:14:21 PAGE 2   
+
+  54   1      P3= 0x04;
+  55   1        
+  56   1        
+  57   1      tl1r=1;    // signal 1
+  58   1      tl1o=0; 
+  59   1      tl1g=0;
+  60   1      
+  61   1      tl2r=0;   // signal 2
+  62   1      tl2o=1;
+  63   1      tl2g=0;
+  64   1      
+  65   1      tl3r=0;   // signal 3
+  66   1      tl3o=0;
+  67   1      tl3g=1;
+  68   1        
+  69   1        
+  70   1      delay(100);   // delay 
+  71   1      
+  72   1      P2= 0x0c;    // traffic signal control
+  73   1      P3= 0x02;
+  74   1      
+  75   1        
+  76   1      tl1r=0;     // signal 1
+  77   1      tl1o=0; 
+  78   1      tl1g=1;
+  79   1        
+  80   1      tl2r=1;    // signal 2
+  81   1      tl2o=0; 
+  82   1      tl2g=0;
+  83   1      
+  84   1      tl3r=0;    // signal 3
+  85   1      tl3o=1;
+  86   1      tl3g=0; 
+  87   1      
+  88   1      
+  89   1      delay(100);  // delay
+  90   1      
+  91   1      P2= 0x22;  // traffic signal control
+  92   1      P3= 0x01;
+  93   1      
+  94   1         
+  95   1      tl1r=0;   // signal 1
+  96   1      tl1o=1; 
+  97   1      tl1g=0;
+  98   1      
+  99   1      tl2r=0;   // signal 2
+ 100   1      tl2o=0;
+ 101   1      tl2g=1;
+ 102   1      
+ 103   1      tl3r=1;   // signal 3
+ 104   1      tl3o=0;
+ 105   1      tl3g=0; 
+ 106   1      
+ 107   1      
+ 108   1      delay(100);  // delay
+ 109   1        
+ 110   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    217    ----
+   CONSTANT SIZE    =   ----    ----
+C51 COMPILER V9.60.0.0   TRAFFIC_LIGHT                                                     07/06/2024 01:14:21 PAGE 3   
+
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       8
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)
