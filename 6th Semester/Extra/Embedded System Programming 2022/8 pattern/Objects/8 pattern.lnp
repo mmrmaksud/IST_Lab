@@ -1,0 +1,3 @@
+".\Objects\8 pattern.obj" 
+TO ".\Objects\8 pattern" 
+PRINT(".\Listings\8 pattern.m51")
