@@ -1,0 +1,79 @@
+C51 COMPILER V9.60.7.0   7TH_LAB                                                           07/16/2025 18:30:06 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE 7TH_LAB
+OBJECT MODULE PLACED IN .\Objects\7th_Lab.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE 7th_Lab.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\7
+                    -th_Lab.lst) TABS(2) OBJECT(.\Objects\7th_Lab.obj)
+
+line level    source
+
+   1          #include <reg51.h>
+   2          // Traffic Light 1 (P2.0 - P2.2)
+   3          sbit RED_1    = P2^0;
+   4          sbit YELLOW_1 = P2^1;
+   5          sbit GREEN_1  = P2^2;
+   6          // Traffic Light 2 (P2.3 - P2.5)
+   7          sbit RED_2    = P2^3;
+   8          sbit YELLOW_2 = P2^4;
+   9          sbit GREEN_2  = P2^5;
+  10          // Traffic Light 3 (P3.0 - P3.2)
+  11          sbit RED_3    = P3^0;
+  12          sbit YELLOW_3 = P3^1;
+  13          sbit GREEN_3  = P3^2;
+  14          void delay(unsigned int t) {
+  15   1          unsigned int i, j;
+  16   1          for(i = 0; i < t; i++)
+  17   1              for(j = 0; j < 1275; j++);
+  18   1      }
+  19          // Phase 1: 1 - RED, 2 - YELLOW, 3 - GREEN
+  20          void signal_phase1() {
+  21   1          RED_1 = 1; YELLOW_1 = 0; GREEN_1 = 0;
+  22   1          RED_2 = 0; YELLOW_2 = 1; GREEN_2 = 0;
+  23   1          RED_3 = 0; YELLOW_3 = 0; GREEN_3 = 1;
+  24   1          delay(200);
+  25   1      }
+  26          // Phase 2: 1 - GREEN, 2 - RED, 3 - YELLOW
+  27          void signal_phase2() {
+  28   1          RED_1 = 0; YELLOW_1 = 0; GREEN_1 = 1;
+  29   1          RED_2 = 1; YELLOW_2 = 0; GREEN_2 = 0;
+  30   1          RED_3 = 0; YELLOW_3 = 1; GREEN_3 = 0;
+  31   1          delay(200);
+  32   1      }
+  33          // Phase 3: 1 - YELLOW, 2 - GREEN, 3 - RED
+  34          void signal_phase3() {
+  35   1          RED_1 = 0; YELLOW_1 = 1; GREEN_1 = 0;
+  36   1          RED_2 = 0; YELLOW_2 = 0; GREEN_2 = 1;
+  37   1          RED_3 = 1; YELLOW_3 = 0; GREEN_3 = 0;
+  38   1          delay(200);
+  39   1      }
+  40          // Sequence control
+  41          void traffic_light_sequence() {
+  42   1          signal_phase1();
+  43   1          signal_phase2();
+  44   1          signal_phase3();
+  45   1      }
+  46          void main() {
+  47   1          P1 = 0x00;
+  48   1          P2 = 0x00;
+  49   1          P3 = 0x00;
+  50   1          while(1) {
+  51   2              traffic_light_sequence();
+  52   2          }
+  53   1      }
+
+C51 COMPILER V9.60.7.0   7TH_LAB                                                           07/16/2025 18:30:06 PAGE 2   
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    128    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
