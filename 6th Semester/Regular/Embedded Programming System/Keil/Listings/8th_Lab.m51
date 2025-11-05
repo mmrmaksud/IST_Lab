@@ -1,0 +1,99 @@
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    11/05/2025  10:02:43  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.4.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\8th_Lab.obj TO .\Objects\8th_Lab PRINT (.\Listings\8th_Lab.m51)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\8th_Lab.obj (8TH_LAB)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  .\Objects\8th_Lab (8TH_LAB)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     001DH     UNIT         ?PR?DELAY?8TH_LAB
+            CODE    081DH     001AH     UNIT         ?PR?MAIN?8TH_LAB
+            CODE    0837H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\8th_Lab (8TH_LAB)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?8TH_LAB
+
+?PR?MAIN?8TH_LAB
+  +--> ?PR?DELAY?8TH_LAB
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\8th_Lab (8TH_LAB)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        8TH_LAB
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00A0H         PUBLIC        P2
+  C:081DH         PUBLIC        main
+  C:0800H         PUBLIC        Delay
+  -------         PROC          DELAY
+  -------         DO            
+  D:0006H         SYMBOL        i
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  11/05/2025  10:02:43  PAGE 2
+
+
+  D:0004H         SYMBOL        j
+  -------         ENDDO         
+  C:0800H         LINE#         2
+  C:0800H         LINE#         3
+  C:0800H         LINE#         5
+  C:0803H         LINE#         6
+  C:0803H         LINE#         7
+  C:0806H         LINE#         8
+  C:0806H         LINE#         9
+  C:0811H         LINE#         10
+  C:081CH         LINE#         11
+  -------         ENDPROC       DELAY
+  -------         PROC          MAIN
+  C:081DH         LINE#         12
+  C:081DH         LINE#         13
+  C:081DH         LINE#         14
+  C:081DH         LINE#         15
+  C:081DH         LINE#         16
+  C:0820H         LINE#         17
+  C:0823H         LINE#         18
+  C:0826H         LINE#         19
+  C:0829H         LINE#         20
+  C:082CH         LINE#         21
+  C:082FH         LINE#         23
+  C:0832H         LINE#         24
+  C:0835H         LINE#         26
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        8TH_LAB
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0037H BYTE ( 2%) *
+******************************************************************************
+
+Program Size: data=9.0 xdata=0 code=70
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
