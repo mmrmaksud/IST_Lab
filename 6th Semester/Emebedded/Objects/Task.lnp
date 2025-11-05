@@ -1,3 +1,0 @@
-".\Objects\task.obj" 
-TO ".\Objects\Task" 
-PRINT(".\Listings\Task.m51")
