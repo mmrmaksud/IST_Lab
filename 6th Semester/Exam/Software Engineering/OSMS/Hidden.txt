@@ -1,0 +1,4 @@
+hidden
+idea - .gitignore
+venv - .gitignore
+osms main - .gitignore
