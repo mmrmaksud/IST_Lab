@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container py-5">
+  <h2 class="mb-4">Your Orders</h2>
+  {% if orders %}
+    <div class="list-group">
+      {% for o in orders %}
+        <a href="{% url 'orders:order_detail' o.id %}" class="list-group-item list-group-item-action">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">Order #{{ o.id }} — ৳ {{ o.total_price }}</h5>
+            <small class="text-muted">{{ o.created_at|date:"M d, Y H:i" }}</small>
+          </div>
+          <p class="mb-1">Status: {{ o.get_status_display }}</p>
+          <small>Name: {{ o.customer_name }} | Mobile: {{ o.mobile }}</small>
+        </a>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p class="text-muted">You have no orders yet.</p>
+  {% endif %}
+</div>
+{% endblock %}
