@@ -1,0 +1,31 @@
+%{
+#include<stdio.h>
+int verb_count=0;
+%}
+VERB is|am|are|were|go
+ADVERB very|simply|quickly|gently
+PREP to|from|behind|between
+CONJ if|then
+%%
+{VERB} {printf("%s : VERB\n",yytext);verb_count++}
+{ADVERB} {printf("%s : ADVERB\n",yytext);}
+{PREP} {printf("%s : PREP\n",yytext);}
+{CONJ} {printf("%s : CONJ\n",yytext);}
+
+[\t\n]+{}
+[a-zA-Z]+{printf("%s : UNKNOWN WORD\n",yytext)}
+
+{}
+%%
+
+int yywrap(){
+return 1;
+}
+
+int main ()
+{
+printf("Enter text (Ctrl+D on Linux/macOS, Ctrl+Z on windows to stop):\n");
+yylex();
+//printf("\nTotal verbs found:%d\n",verb_count);
+return 0;
+}
