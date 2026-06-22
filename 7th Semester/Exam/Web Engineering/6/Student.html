@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Information</title>
+</head>
+<body>
+<h2>Student Information</h2>
+<form action="student_info.php" method="post">
+    <label>Full Name:</label>
+    <input type="text" name="fname" required>
+    <br><br>
+    <label>Student ID:</label>
+    <input type="number" name="sid" required>
+    <br><br>
+    <label>E-commerce:</label>
+    <input type="number" name="ecommerce" min="0" max="100" required>
+    <br><br>
+    <label>Graphics:</label>
+    <input type="number" name="graphics" min="0" max="100" required>
+    <br><br>
+    <label>TOC:</label>
+    <input type="number" name="toc" min="0" max="100" required>
+    <br><br>
+    <label>Compiler:</label>
+    <input type="number" name="compiler" min="0" max="100" required>
+    <br><br>
+    <input type="submit" value="Submit">
+    <input type="reset" value="Reset">
+</form>
+</body>
+</html>

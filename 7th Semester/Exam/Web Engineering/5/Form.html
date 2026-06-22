@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="process.php" method="post">
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name" />
+      <br /><br />
+      <label for="email">Email:</label>
+      <input type="email" name="email" id="email" />
+      <br /><br />
+      <label for="message">Message:</label>
+      <textarea name="message" id="message"></textarea>
+      <br /><br />
+      <label for="gender">Gender:</label>
+      <input type="radio" name="gender" id="male" value="Male" />
+      <label for="male">Male</label>
+      <input type="radio" name="gender" id="female" value="Female" />
+      <label for="female">Female</label>
+      <br /><br />
+      <!-- checkbox -->
+      <label for="interests">Interests:</label>
+      <input type="checkbox" name="interests[]" id="coding" value="coding" />
+      <label for="coding">Coding</label>
+      <input
+        type="checkbox"
+        name="interests[]"
+        id="traveling"
+        value="traveling"
+      />
+      <label for="traveling"> Traveling</label>
+      <input type="checkbox" name="interests[]" id="reading" value="reading" />
+      <label for="reading">Reading</label>
+      <br /><br />
+      <!-- list box -->
+      <label for="department">Department</label>
+      <select name="department" id="department">
+        <option value="CSE">CSE</option>
+        <option value="ECE">ECE</option>
+        <option value="BBA">BBA</option>
+      </select>
+      <br /><br />
+      <label for="password">Password:</label>
+      <input type="password" name="password" id="password" />
+      <br /><br />
+      <input type="submit" value="Submit" />
+      <input type="reset" value="Reset" />
+    </form>
+  </body>
+</html>
